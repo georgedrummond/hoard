@@ -21,11 +21,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'dotenv-rails'
   gem 'capybara'
-  gem 'vcr'
-  gem 'webmock'
 end
