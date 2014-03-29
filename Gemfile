@@ -29,6 +29,7 @@ group :test do
   gem 'webmock'
   gem 'coveralls', require: false
   gem 'codeclimate-test-reporter', require: false
+  gem 'simplecov', require: false
 end
 
 group :test, :development do

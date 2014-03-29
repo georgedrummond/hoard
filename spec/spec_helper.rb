@@ -6,6 +6,9 @@ if ENV['CI']
   CodeClimate::TestReporter.start
 end
 
+require 'simplecov'
+SimpleCov.start
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -36,6 +39,7 @@ OmniAuth.config.add_mock(:github, {
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/cassettes'
   c.hook_into :webmock
+  config.ignore_hosts 'codeclimate.com'
 end
 
 RSpec.configure do |config|
