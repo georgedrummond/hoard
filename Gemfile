@@ -28,6 +28,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'coveralls', require: false
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :test, :development do
