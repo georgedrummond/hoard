@@ -18,6 +18,7 @@ gem 'haml'
 gem 'sidekiq'
 gem 'octokit'
 gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'fog'
 
 group :doc do
   gem 'sdoc', require: false

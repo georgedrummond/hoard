@@ -4,4 +4,8 @@ class RubygemsController < ApplicationController
     
   end
 
+  def create
+
+  end
+
 end
