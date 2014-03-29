@@ -12,6 +12,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'hipchat-api'
 gem 'badgerbadgerbadger'
+gem 'haml'
 
 group :doc do
   gem 'sdoc', require: false
@@ -20,4 +21,5 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda'
+  gem 'dotenv-rails'
 end
