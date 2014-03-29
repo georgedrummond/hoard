@@ -71,7 +71,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
-    jbuilder (1.5.3)
+    jbuilder (2.0.5)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jquery-rails (3.1.0)
@@ -212,7 +212,7 @@ DEPENDENCIES
   dotenv-rails
   haml
   hipchat-api
-  jbuilder (~> 1.2)
+  jbuilder
   jquery-rails
   octokit
   omniauth
