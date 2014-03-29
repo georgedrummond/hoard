@@ -12,6 +12,7 @@ class Upload
 
     if release.save
       IndexWorker.perform_async(path)
+      NotificationsWorker.perform_async(release.id)
     else
       false
     end

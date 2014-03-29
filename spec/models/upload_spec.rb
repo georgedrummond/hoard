@@ -21,6 +21,7 @@ describe Upload do
     context 'true' do
       it do
         IndexWorker.should_receive(:perform_async).with(path).once.and_return(true)
+        NotificationsWorker.should_receive(:perform_async).with(anything).once.and_return(true)
         expect(upload.store!).to be_true
       end
     end
@@ -31,6 +32,7 @@ describe Upload do
 
       it do
         IndexWorker.should_receive(:perform_async).with(anything).never
+        NotificationsWorker.should_receive(:perform_async).with(anything).never
         expect(upload.store!).to be_false
       end
     end
