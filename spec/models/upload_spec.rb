@@ -16,4 +16,17 @@ describe Upload do
     its(:name)    { should eq 'mafia' }
     its(:version) { should eq Gem::Version.new('0.1.4') }
   end
+
+  describe 'store!' do
+    context 'true' do
+      it { expect(upload.store!).to be_true }
+    end
+
+    context 'false' do
+      let!(:rubygem) { create :rubygem, name: 'mafia' }
+      let!(:release) { create :release, rubygem: rubygem, version: '0.1.4' }
+
+      it { expect(upload.store!).to be_false }
+    end
+  end
 end

@@ -15,7 +15,17 @@ ActiveRecord::Schema.define(version: 20140329015543) do
 
   create_table "releases", force: true do |t|
     t.integer  "rubygem_id"
+    t.string   "name"
     t.string   "version"
+    t.text     "description"
+    t.text     "summary"
+    t.string   "platform"
+    t.date     "date"
+    t.boolean  "prerelease"
+    t.string   "number"
+    t.string   "authors"
+    t.string   "email"
+    t.string   "dependencies"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
