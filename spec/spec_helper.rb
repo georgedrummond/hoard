@@ -5,6 +5,11 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'vcr'
 
+if ENV['CI'] 
+  require 'coveralls'
+  Coveralls.wear!
+end
+
 ENV['GITHUB_ORGANIZATION_ID'] = 'rentify'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
