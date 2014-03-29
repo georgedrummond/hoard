@@ -31,7 +31,7 @@ OmniAuth.config.add_mock(:github, {
 })
 
 VCR.configure do |c|
-  c.cassette_library_dir = 'spec/cassettes'
+  c.cassette_library_dir = 'spec/fixtures/cassettes'
   c.hook_into :webmock
 end
 
