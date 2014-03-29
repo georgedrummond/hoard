@@ -15,6 +15,7 @@ gem 'badgerbadgerbadger'
 gem 'haml'
 gem 'sidekiq'
 gem 'octokit'
+gem 'bootstrap-sass', '>= 3.0.0.0'
 
 group :doc do
   gem 'sdoc', require: false
