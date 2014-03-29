@@ -5,4 +5,11 @@
     = stylesheet_link_tag    :application, media: :all, data: { turbolinks_track: true }
     = javascript_include_tag :application, data: { turbolinks_track: true }
     = csrf_meta_tags
-  %body= yield
+  %body
+    .container
+      .row
+        .col-md-12= yield
+
+      .row
+        .col-md-12
+          .text-muted &copy; George Drummond 2014. Powered by #{link_to 'Hoard', 'https://github.com/georgedrummond/hoard', target: :blank}
