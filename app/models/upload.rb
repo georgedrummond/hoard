@@ -10,8 +10,6 @@ class Upload
   def store!
     build_release
 
-    puts release.inspect
-
     if release.save
       true
     else

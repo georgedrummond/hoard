@@ -1,8 +1,6 @@
 language: ruby
 cache: bundler
 
-secure: "YJ7b4F8G0QlDVa2JuCfG9H2MWzd/DCyxQ5dNEDHiObDuDCbGYg7fcC9hjPJj/JsZzSZtRhC6BDIZgLVnhn02Zr2gUK8XEeOyaBt2y45d6erUzdP6mzLv6idmCQqIEr2kV1WE3ScnFQ6ygYopcxFxT/PYCaPEZGBgODuPERdp/+A="
-
 rvm:
   - 2.1.0
 
@@ -13,4 +11,4 @@ script:
 
 addons:
   code_climate:
-    repo_token: $CODE_CLIMATE_REPO_TOKEN
+    repo_token: 1c1b2acd7b6e37304ad93ffc32ac3f11dd5cd597be8a65345e53ea903feacc5c
