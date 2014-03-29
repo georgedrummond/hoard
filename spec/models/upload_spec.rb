@@ -19,14 +19,20 @@ describe Upload do
 
   describe 'store!' do
     context 'true' do
-      it { expect(upload.store!).to be_true }
+      it do
+        IndexWorker.should_receive(:perform_async).with(path).once.and_return(true)
+        expect(upload.store!).to be_true
+      end
     end
 
     context 'false' do
       let!(:rubygem) { create :rubygem, name: 'mafia' }
       let!(:release) { create :release, rubygem: rubygem, version: '0.1.4' }
 
-      it { expect(upload.store!).to be_false }
+      it do
+        IndexWorker.should_receive(:perform_async).with(anything).never
+        expect(upload.store!).to be_false
+      end
     end
   end
 end

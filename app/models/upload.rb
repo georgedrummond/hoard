@@ -11,7 +11,7 @@ class Upload
     build_release
 
     if release.save
-      true
+      IndexWorker.perform_async(path)
     else
       false
     end
@@ -35,5 +35,4 @@ class Upload
       dependencies: spec.dependencies.collect {|g| [g.name, g.requirement.to_s]}
     )
   end
-
 end
