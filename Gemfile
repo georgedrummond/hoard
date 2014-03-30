@@ -19,6 +19,7 @@ gem 'sidekiq'
 gem 'octokit'
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'fog'
+gem 'foreman'
 
 group :doc do
   gem 'sdoc', require: false
