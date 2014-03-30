@@ -20,6 +20,7 @@ describe SessionsController do
       end
 
       it { should redirect_to rubygems_path }
+      it { expect(controller.current_user).to be_kind_of User }
     end
 
     context 'not in organization' do
@@ -30,7 +31,20 @@ describe SessionsController do
       end
 
       it { should redirect_to login_path }
+      it { expect(controller.current_user).to be_nil }
     end
+  end
+
+  describe '#destroy' do
+    let!(:user) { create :user }
+
+    before do
+      session[:user_id] = user.id
+      get :destroy
+    end
+
+    it { should redirect_to login_path }
+    it { expect(controller.current_user).to be_nil }
   end
 
 end

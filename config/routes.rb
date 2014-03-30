@@ -6,12 +6,12 @@ Hoard::Application.routes.draw do
     end
   end
 
-
   get '/auth/:provider/callback', to: 'sessions#create'
-  get '/login', to: 'sessions#new', as: 'login'
+  get '/login',  to: 'sessions#new', as: 'login'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
 
   resources :rubygems
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:create]
 
   root to: redirect('/rubygems')
 end
