@@ -8,7 +8,7 @@ describe RequiredEnv do
     end
 
     it 'false' do
-      ENV['GITHUB_API_SECRET'] = nil
+      stub_const('ENV', {})
       expect(RequiredEnv.set?).to be_false
     end
   end
@@ -19,8 +19,8 @@ describe RequiredEnv do
     end
 
     it 'true' do
-      ENV['GITHUB_API_SECRET'] = nil
-      expect(RequiredEnv.missing).to eq ['GITHUB_API_SECRET']
+      stub_const('ENV', {})
+      expect(RequiredEnv.missing).to eq RequiredEnv::VARIABLES
     end
   end
 end

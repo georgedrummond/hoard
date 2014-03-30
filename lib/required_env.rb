@@ -1,7 +1,7 @@
 class RequiredEnv
   VARIABLES = [
-    'GITHUB_API_KEY',
-    'GITHUB_API_SECRET',
+    'GITHUB_KEY',
+    'GITHUB_SECRET',
     'GITHUB_ORGANIZATION_NAME',
     'AWS_BUCKET',
     'AWS_KEY',
