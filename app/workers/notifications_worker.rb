@@ -1,7 +1,7 @@
 class NotificationsWorker
-  include Sidekiq::Worker
+  include SuckerPunch::Job
 
   def perform(release_id)
-    
+
   end
 end

@@ -10,7 +10,3 @@ before_script:
 
 script:
   - bundle exec rspec
-
-addons:
-  code_climate:
-    repo_token: 1c1b2acd7b6e37304ad93ffc32ac3f11dd5cd597be8a65345e53ea903feacc5c
