@@ -46,8 +46,8 @@ RSpec.configure do |config|
   config.order = 'random'
 
   config.before(:each) do
-    ENV['GITHUB_API_KEY'] = ''
-    ENV['GITHUB_API_SECRET'] = ''
+    ENV['GITHUB_KEY'] = ''
+    ENV['GITHUB_SECRET'] = ''
     ENV['GITHUB_ORGANIZATION_NAME'] = 'rentify'
     ENV['AWS_BUCKET'] = ''
     ENV['AWS_KEY'] = ''

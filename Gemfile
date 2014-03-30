@@ -33,17 +33,17 @@ group :production do
 end
 
 group :test do
+  gem 'capybara'
   gem 'codeclimate-test-reporter', require: false
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'shoulda'
   gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'
 end
 
-group :test, :development do
-  gem 'rspec-rails'
-  gem 'shoulda'
+group :development do
   gem 'dotenv-rails'
-  gem 'capybara'
 end
