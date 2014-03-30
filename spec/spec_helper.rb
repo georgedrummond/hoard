@@ -1,13 +1,17 @@
-if ENV['CI'] 
-  require 'coveralls'
-  Coveralls.wear!
+require 'simplecov'
 
+if ENV['CI']
   require 'codeclimate-test-reporter'
-  CodeClimate::TestReporter.start
+  require 'coveralls'
+
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    Coveralls::SimpleCov::Formatter,
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter
+  ]
 end
 
-require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'rails'
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -38,15 +42,18 @@ OmniAuth.config.add_mock(:github, {
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/cassettes'
   c.hook_into :webmock
-  c.ignore_hosts 'codeclimate.com'
 end
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods 
+  config.include FactoryGirl::Syntax::Methods
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
 
   config.order = 'random'
+
+  config.after(:suite) do
+    WebMock.disable!
+  end
 end
