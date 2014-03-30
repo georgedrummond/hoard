@@ -1,5 +1,5 @@
 class IndexWorker
-  include Sidekiq::Worker
+  include SuckerPunch::Job
 
   def perform(path)
     Indexer.sync!(path)
