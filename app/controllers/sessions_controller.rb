@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     client = Octokit::Client.new(access_token: auth_hash.credentials.token)
     organization_ids = client.organizations.map { |org| org.login  }
 
-    if organization_ids.include?(ENV['GITHUB_ORGANIZATION_ID'])
+    if organization_ids.include?(ENV['GITHUB_ORGANIZATION_NAME'])
       user = User.find_or_create_by(email: auth_hash.info.email)
       user.update_attributes(
         nickname: auth_hash.info.nickname,
