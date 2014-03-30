@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140329015543) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "releases", force: true do |t|
     t.integer  "rubygem_id"
     t.string   "name"
