@@ -11,7 +11,7 @@ class Upload
     build_release
 
     if release.save
-      IndexWorker.new.perform(path)
+      IndexWorker.new.perform(release.id)
       NotificationsWorker.new.perform(release.id)
     else
       false

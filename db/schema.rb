@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140329015543) do
     t.string   "authors"
     t.string   "email"
     t.string   "dependencies"
+    t.boolean  "latest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
