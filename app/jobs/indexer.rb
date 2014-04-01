@@ -11,8 +11,6 @@ class Indexer
     upload "prerelease_specs.4.8.gz", spec_file(prerelease_specs_index)
   end
 
-  private
-
   def upload(path, data)
     puts path
     puts data
